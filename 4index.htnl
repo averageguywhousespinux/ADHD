@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>أكتوبر - شهر التوعية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@600;700;800&family=Cairo:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --o1:#FFA24C; --o2:#F97316; --o3:#E8600C; --o4:#C2410C; --o5:#9A3412;
+    --ink:#3A1C08; --ink-soft:#6B3A17;
+    --paper:#FFFFFF; --cream:#FFF6EC; --peach:#FFE6CF;
+    --sun:#FFD166; --mark:#FFF1A8;
+    --good:#0F8A5F; --bad:#C62828;
+    --shadow:#9A3412;
+    --radius:24px;
+    --head:'Baloo Bhaijaan 2','Cairo',system-ui,sans-serif;
+    --body:'Cairo',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; min-height:100vh; color:#fff; font-family:var(--body);
+    background:var(--o3);
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    padding:0 16px 130px;
+  }
+  html{background:var(--o3)}
+  body::before{content:""; position:fixed; inset:0; z-index:-1; background:linear-gradient(165deg,var(--o1) 0%,var(--o2) 40%,var(--o3) 75%,var(--o4) 100%)}
+  button{font-family:inherit}
+  [hidden]{display:none !important}
+
+  /* ---------- floating background shapes ---------- */
+  .bg-shapes{position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden}
+  .bg-shapes span{position:absolute; border-radius:50%; background:rgba(255,255,255,.10); animation:float 14s ease-in-out infinite}
+  .bg-shapes span:nth-child(1){width:260px;height:260px;top:-60px;right:-80px}
+  .bg-shapes span:nth-child(2){width:160px;height:160px;bottom:12%;left:-50px;animation-delay:-4s}
+  .bg-shapes span:nth-child(3){width:90px;height:90px;top:40%;right:8%;animation-delay:-7s;background:rgba(255,209,102,.22)}
+  .bg-shapes span:nth-child(4){width:50px;height:50px;top:22%;left:14%;animation-delay:-2s;background:rgba(255,255,255,.16)}
+  .bg-shapes span:nth-child(5){width:120px;height:120px;bottom:-40px;right:30%;animation-delay:-9s}
+  .bg-shapes i{position:absolute; color:rgba(255,255,255,.35); font-style:normal; font-size:22px; animation:twinkle 4s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-30px) scale(1.06)}}
+  @keyframes twinkle{0%,100%{opacity:.25;transform:scale(.9)}50%{opacity:.8;transform:scale(1.15)}}
+
+  /* ---------- top bar with logos ---------- */
+  .topbar{position:relative; z-index:2; display:flex; justify-content:space-between; align-items:flex-start; padding:14px 0 0; max-width:1150px; margin:0 auto; min-height:20px}
+  .topbar img{height:auto; mix-blend-mode:multiply; user-select:none; filter:drop-shadow(0 4px 8px rgba(90,30,0,.2))}
+  .ministry-logo{width:clamp(90px,14vw,130px)}
+  .ministry-block{display:flex; flex-direction:column; align-items:center; gap:8px}
+  .ministry-text{margin:0; display:flex; flex-direction:column; align-items:center; gap:3px; font-family:var(--head); font-weight:800; color:#fff; text-shadow:0 2px 0 rgba(154,52,18,.5),0 4px 12px rgba(120,40,0,.35); line-height:1.3; text-align:center}
+  .ministry-text span:first-child{font-size:clamp(.95rem,1.8vw,1.15rem)}
+  .ministry-text span:not(:first-child){font-size:clamp(.72rem,1.3vw,.86rem); font-weight:700; opacity:.96}
+  .school-logo{width:clamp(192px,30vw,276px)}
+
+  main{position:relative; z-index:1}
+  .view{width:min(1100px,100%); margin:0 auto; padding-top:10px; display:flex; flex-direction:column; align-items:center; gap:clamp(22px,4vw,38px); animation:viewIn .5s cubic-bezier(.2,.9,.3,1.2)}
+  @keyframes viewIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+  /* ---------- hero ---------- */
+  .hero{text-align:center; display:flex; flex-direction:column; align-items:center; gap:10px; max-width:860px; margin-top:-14px}
+  .ribbon{width:78px; animation:swing 4s ease-in-out infinite; transform-origin:50% 10%; filter:drop-shadow(0 6px 10px rgba(120,40,0,.35))}
+  @keyframes swing{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; margin:0; background:rgba(255,255,255,.18); border:2px solid rgba(255,255,255,.6); padding:4px 16px; border-radius:999px; font-weight:800; font-size:.95rem}
+  h1{font-family:var(--head); margin:0; font-weight:800; line-height:1.35; font-size:clamp(1.7rem,5.2vw,3.2rem); text-shadow:0 3px 0 rgba(154,52,18,.45),0 8px 26px rgba(120,40,0,.3); text-wrap:balance}
+  h1 .hl{color:var(--sun)}
+  .lead{margin:0; font-size:clamp(1rem,2.6vw,1.25rem); font-weight:700; opacity:.96; max-width:640px; line-height:1.8}
+
+  .page-title{display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center}
+  .page-title .emoji{font-size:clamp(2.4rem,7vw,3.4rem); animation:bounce 2.4s ease-in-out infinite}
+  .page-title h1{font-size:clamp(2rem,7vw,3.6rem)}
+  .page-title p{margin:0; font-weight:700; font-size:1.05rem; opacity:.95}
+  @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+  /* ---------- home tiles ---------- */
+  .tiles{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(14px,2.4vw,24px); width:100%}
+  .tile{
+    position:relative; background:var(--paper); color:var(--ink); text-decoration:none;
+    border-radius:var(--radius); padding:24px 16px 20px; display:flex; flex-direction:column; align-items:center; gap:10px; text-align:center;
+    box-shadow:0 9px 0 var(--shadow),0 18px 30px rgba(120,40,0,.25);
+    transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .3s;
+    animation:tileIn .6s cubic-bezier(.34,1.56,.64,1) both;
+  }
+  .tile:nth-child(2){animation-delay:.08s}.tile:nth-child(3){animation-delay:.16s}.tile:nth-child(4){animation-delay:.24s}
+  @keyframes tileIn{from{opacity:0;transform:translateY(30px) scale(.9)}to{opacity:1;transform:none}}
+  .tile:hover,.tile:focus-visible{transform:translateY(-8px) rotate(-1deg); box-shadow:0 16px 0 var(--shadow),0 26px 40px rgba(120,40,0,.3); outline:none}
+  .tile:active{transform:translateY(2px); box-shadow:0 4px 0 var(--shadow)}
+  .tile-icon{width:72px; height:72px; border-radius:22px; display:grid; place-items:center; background:linear-gradient(145deg,var(--o1),var(--o3)); color:#fff; box-shadow:inset 0 -5px 0 rgba(0,0,0,.12)}
+  .tile:nth-child(2) .tile-icon{background:linear-gradient(145deg,#2BB673,#0F8A5F)}
+  .tile:nth-child(3) .tile-icon{background:linear-gradient(145deg,#3E8EF7,#1C5FC9)}
+  .tile:nth-child(4) .tile-icon{background:linear-gradient(145deg,#F7B733,#E08A00)}
+  .tile-icon svg{width:38px; height:38px}
+  .tile-title{font-family:var(--head); font-size:clamp(1.15rem,2.4vw,1.45rem); font-weight:800; line-height:1.3}
+  .tile-sub{font-size:.9rem; font-weight:700; color:var(--ink-soft); line-height:1.5}
+  .tile-go{position:absolute; top:12px; left:14px; font-size:1.1rem; color:var(--o2); font-weight:900}
+
+  /* ---------- did you know ---------- */
+  .fact{width:min(760px,100%); background:rgba(255,255,255,.16); border:3px dashed rgba(255,255,255,.75); border-radius:var(--radius); padding:18px 22px; display:flex; align-items:center; gap:16px}
+  .fact-badge{flex:none; background:var(--sun); color:var(--ink); font-weight:900; padding:8px 14px; border-radius:16px; transform:rotate(-4deg); box-shadow:0 4px 0 rgba(154,52,18,.4)}
+  .fact p{margin:0; font-weight:800; font-size:clamp(1rem,2.4vw,1.2rem); line-height:1.7; transition:opacity .35s}
+  .motto{font-family:var(--head); font-size:clamp(1.3rem,3.6vw,1.9rem); font-weight:800; margin:0; text-align:center}
+
+  /* ---------- buttons ---------- */
+  .back{display:inline-flex; align-items:center; gap:8px; padding:14px 30px; border-radius:999px; background:var(--paper); color:var(--o4); font-weight:900; font-size:1.1rem; text-decoration:none; box-shadow:0 6px 0 var(--shadow); transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
+  .back:hover,.back:focus-visible{transform:translateY(-4px); box-shadow:0 10px 0 var(--shadow); outline:none}
+  .btn{border:0; cursor:pointer; padding:11px 24px; border-radius:999px; font-weight:900; font-size:1rem; background:var(--o2); color:#fff; box-shadow:0 5px 0 var(--o5); transition:transform .2s,box-shadow .2s}
+  .btn:hover{transform:translateY(-2px); box-shadow:0 7px 0 var(--o5)}
+  .btn:active{transform:translateY(3px); box-shadow:0 2px 0 var(--o5)}
+  .btn.ghost{background:var(--peach); color:var(--o4); box-shadow:0 4px 0 #F4B98A}
+  /* ---------- definition / accordion ---------- */
+  .acc{width:min(820px,100%); display:flex; flex-direction:column; gap:16px}
+  .acc-item{background:var(--paper); color:var(--ink); border-radius:var(--radius); box-shadow:0 7px 0 var(--shadow); overflow:hidden; transition:box-shadow .3s}
+  .acc-item.open{box-shadow:0 7px 0 var(--shadow),0 0 0 4px rgba(255,255,255,.6)}
+  .acc-btn{width:100%; border:0; background:none; cursor:pointer; color:var(--ink); display:flex; align-items:center; gap:14px; padding:18px 20px; text-align:right; font-family:var(--head); font-size:clamp(1.2rem,3.2vw,1.5rem); font-weight:800}
+  .acc-ico{flex:none; width:52px; height:52px; border-radius:16px; display:grid; place-items:center; font-size:1.6rem; background:var(--peach)}
+  .acc-label{flex:1}
+  .acc-arrow{flex:none; width:38px; height:38px; border-radius:50%; display:grid; place-items:center; background:var(--o2); color:#fff; font-size:.9rem; transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
+  .acc-item.open .acc-arrow{transform:rotate(180deg)}
+  .acc-btn:focus-visible{outline:3px solid var(--o2); outline-offset:-6px; border-radius:var(--radius)}
+  .acc-panel{display:grid; grid-template-rows:0fr; transition:grid-template-rows .55s cubic-bezier(.4,0,.2,1)}
+  .acc-item.open .acc-panel{grid-template-rows:1fr}
+  .acc-clip{overflow:hidden; min-height:0}
+  .acc-body{padding:0 22px 24px; border-top:3px dashed var(--peach); margin:0 20px; padding-inline:0; padding-top:18px; font-size:1.06rem; line-height:2; font-weight:700}
+  .acc-body p{margin:0 0 12px}
+  .acc-body .intro{background:var(--cream); border-radius:16px; padding:12px 16px; color:var(--ink-soft)}
+  .acc-tools{display:flex; justify-content:flex-start; margin-bottom:12px}
+  .cards3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:6px}
+  .cards2{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+  .mini{background:var(--cream); border-radius:18px; padding:14px 16px; border:2px solid var(--peach)}
+  .mini.star{border-color:var(--o2); background:#FFF0E0}
+  .mini h4{margin:0 0 6px; font-family:var(--head); font-size:1.2rem; color:var(--o4); display:flex; align-items:center; gap:8px}
+  .mini ul{list-style:none; margin:0; padding:0}
+  .mini li{position:relative; padding-right:22px; margin-bottom:6px; line-height:1.8}
+  .mini li::before{content:""; position:absolute; right:4px; top:.75em; width:9px; height:9px; border-radius:50%; background:var(--o2)}
+  .tag{display:inline-block; font-size:.78rem; background:var(--o2); color:#fff; padding:0 10px; border-radius:999px; font-family:var(--body); font-weight:800; line-height:1.9}
+
+  /* ---------- activities ---------- */
+  .acts{display:grid; grid-template-columns:repeat(2,1fr); gap:24px; width:100%; max-width:900px}
+  .act{background:var(--paper); color:var(--ink); border-radius:var(--radius); padding:14px; box-shadow:0 8px 0 var(--shadow); display:flex; flex-direction:column; gap:12px; transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+  .act:hover{transform:translateY(-6px) rotate(.5deg)}
+  .act-img{position:relative; border-radius:18px; overflow:hidden; aspect-ratio:16/10; background:linear-gradient(135deg,var(--o1),var(--o3))}
+  .act-img img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s}
+  .act:hover .act-img img{transform:scale(1.06)}
+  .act-img.noimg::after{content:attr(data-icon); position:absolute; inset:0; display:grid; place-items:center; font-size:4rem}
+  .act-num{position:absolute; top:10px; right:10px; width:42px; height:42px; border-radius:50%; background:var(--sun); color:var(--ink); display:grid; place-items:center; font-weight:900; font-size:1.2rem; box-shadow:0 3px 0 rgba(0,0,0,.2); z-index:1}
+  .act p{margin:0; font-weight:800; font-size:1.08rem; line-height:1.8; padding:0 6px}
+
+  /* ---------- games ---------- */
+  .games{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; width:100%}
+  .game{background:var(--paper); color:var(--ink); border-radius:var(--radius); padding:18px; box-shadow:0 8px 0 var(--shadow); display:flex; flex-direction:column; align-items:center; gap:12px}
+  .game-head{width:100%; text-align:center; border-bottom:3px dashed var(--peach); padding-bottom:10px}
+  .game-head h3{margin:0; font-family:var(--head); font-size:1.4rem; color:var(--o4)}
+  .game-head p{margin:4px 0 8px; font-weight:700; font-size:.95rem; color:var(--ink-soft); line-height:1.6}
+  .stats{display:flex; gap:8px; flex-wrap:wrap; justify-content:center}
+  .stat{background:var(--cream); border:2px solid var(--peach); border-radius:12px; padding:2px 12px; font-weight:800; font-size:.92rem}
+  .stat b{color:var(--o4)}
+
+  .emoji-grid{--n:5; display:grid; grid-template-columns:repeat(var(--n),1fr); gap:3px; width:100%; max-width:300px; aspect-ratio:1; background:var(--cream); padding:6px; border-radius:16px}
+  .emoji-cell{border:0; background:#fff; border-radius:6px; display:grid; place-items:center; cursor:pointer; padding:0; font-size:calc(250px / var(--n) * .6); line-height:1; transition:transform .15s,background .15s; user-select:none}
+  .emoji-cell:hover{transform:scale(1.18); background:var(--peach); z-index:2}
+  .emoji-cell.found{animation:found .8s ease; background:#C8F2DD}
+  @keyframes found{0%{transform:scale(1)}40%{transform:scale(1.9) rotate(15deg)}100%{transform:scale(1.3)}}
+  .shake{animation:shake .35s}
+  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+
+  .word-board{width:100%; background:#2A160A; border-radius:18px; padding:20px 10px; text-align:center; box-shadow:inset 0 -6px 0 rgba(0,0,0,.35)}
+  .word-board span{font-family:var(--head); font-size:2.5rem; font-weight:800; letter-spacing:1px; display:inline-block}
+  .word-board.pulse span{animation:pulse .3s}
+  @keyframes pulse{50%{transform:scale(1.2)}}
+  .timebar{width:100%; height:12px; background:var(--peach); border-radius:999px; overflow:hidden}
+  .timebar i{display:block; height:100%; width:100%; background:linear-gradient(90deg,#E53935,var(--o2)); border-radius:999px; transition:width 1s linear}
+  .color-opts{display:grid; grid-template-columns:repeat(2,1fr); gap:8px; width:100%}
+  .color-btn{border:0; border-radius:14px; padding:12px; font-weight:900; font-size:1.1rem; cursor:pointer; box-shadow:0 4px 0 rgba(0,0,0,.25); transition:transform .15s}
+  .color-btn:hover:not(:disabled){transform:translateY(-2px)}
+  .color-btn:active:not(:disabled){transform:translateY(2px); box-shadow:0 1px 0 rgba(0,0,0,.25)}
+  .color-btn:disabled{opacity:.45; cursor:default}
+
+  .bubble-area{position:relative; width:100%; height:240px; border-radius:18px; overflow:hidden; background:linear-gradient(180deg,#DDF3FF,#BDE6FF); touch-action:manipulation}
+  .bubble{position:absolute; border:0; padding:0; border-radius:50%; cursor:pointer; transform:translate(-50%,-50%); animation:popIn .3s cubic-bezier(.34,1.56,.64,1), drift 2.2s ease-in-out; box-shadow:inset -4px -6px 10px rgba(0,0,0,.08),inset 4px 5px 8px rgba(255,255,255,.9),0 4px 10px rgba(0,80,140,.2)}
+  .bubble.c0{background:radial-gradient(circle at 32% 30%,#fff 0 18%,#FFB36B 60%,#F97316)}
+  .bubble.c1{background:radial-gradient(circle at 32% 30%,#fff 0 18%,#8FD3FF 60%,#3E8EF7)}
+  .bubble.c2{background:radial-gradient(circle at 32% 30%,#fff 0 18%,#9BE8C2 60%,#2BB673)}
+  .bubble.popped{transform:translate(-50%,-50%) scale(1.6); opacity:0; transition:.18s}
+  .bubble.fade{opacity:0; transition:.25s}
+  @keyframes popIn{from{transform:translate(-50%,-50%) scale(0)}to{transform:translate(-50%,-50%) scale(1)}}
+  @keyframes drift{to{margin-top:-24px}}
+  .plus{position:absolute; transform:translate(-50%,-50%); font-weight:900; color:var(--o4); font-size:1.3rem; pointer-events:none; animation:rise .7s ease-out forwards}
+  @keyframes rise{to{margin-top:-40px; opacity:0}}
+  .area-overlay{position:absolute; inset:0; display:grid; place-items:center; z-index:5; background:rgba(255,255,255,.35)}
+
+
+  /* ---------- game hub ---------- */
+  .game-pick{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; width:100%}
+  .pick{border:0; cursor:pointer; background:var(--paper); color:var(--ink); border-radius:var(--radius); padding:22px 14px 18px; display:flex; flex-direction:column; align-items:center; gap:8px; text-align:center; box-shadow:0 9px 0 var(--shadow); transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .3s; animation:tileIn .6s cubic-bezier(.34,1.56,.64,1) both}
+  .pick:nth-child(2){animation-delay:.08s}.pick:nth-child(3){animation-delay:.16s}.pick:nth-child(4){animation-delay:.24s}
+  .pick:hover,.pick:focus-visible{transform:translateY(-8px) rotate(-1deg); box-shadow:0 16px 0 var(--shadow); outline:none}
+  .pick-ico{width:84px; height:84px; border-radius:26px; display:grid; place-items:center; font-size:2.6rem; background:linear-gradient(145deg,var(--c1),var(--c2)); box-shadow:inset 0 -6px 0 rgba(0,0,0,.15)}
+  .pick-title{font-family:var(--head); font-size:1.4rem; font-weight:800}
+  .pick-sub{font-weight:700; color:var(--ink-soft); font-size:.95rem}
+  .pick-skill{margin-top:4px; background:var(--cream); border:2px solid var(--peach); border-radius:999px; padding:2px 12px; font-weight:800; font-size:.85rem; color:var(--o4)}
+
+  .stage{width:min(780px,100%); background:var(--paper); color:var(--ink); border-radius:var(--radius); padding:clamp(16px,3vw,26px); box-shadow:0 9px 0 var(--shadow); display:flex; flex-direction:column; align-items:center; gap:12px; animation:viewIn .4s}
+  .stage-head{width:100%; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap}
+  .stage-head .btn{padding:8px 18px}
+  .stage-title{margin:0; font-family:var(--head); font-size:clamp(1.6rem,4.5vw,2.2rem); color:var(--o4)}
+  .stage-how{margin:0; text-align:center; font-weight:700; color:var(--ink-soft); line-height:1.8; max-width:600px}
+  .stage-body{width:100%; display:flex; flex-direction:column; align-items:center; gap:12px; margin-top:6px}
+  .status{margin:0; min-height:1.8em; font-weight:900; font-size:1.15rem; color:var(--o4); text-align:center}
+  .btn.big{font-size:1.2rem; padding:14px 36px}
+
+  /* memory cards */
+  .mcards{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; width:min(440px,100%)}
+  .mcard{border:0; padding:0; background:none; cursor:pointer; aspect-ratio:1; perspective:600px}
+  .mc-inner{position:relative; display:block; width:100%; height:100%; transition:transform .45s cubic-bezier(.4,.2,.2,1.2); transform-style:preserve-3d}
+  .mcard.flip .mc-inner{transform:rotateY(180deg)}
+  .mc-face{position:absolute; inset:0; border-radius:16px; display:grid; place-items:center; backface-visibility:hidden; -webkit-backface-visibility:hidden; box-shadow:0 4px 0 rgba(0,0,0,.18)}
+  .mc-back{background:linear-gradient(145deg,var(--o1),var(--o3)); color:#fff; font-size:1.8rem}
+  .mc-front{background:var(--cream); border:3px solid var(--peach); font-size:clamp(1.8rem,7vw,2.6rem); transform:rotateY(180deg)}
+  .mcard.matched .mc-front{background:#DDF6EA; border-color:var(--good); animation:pulse .4s}
+
+  /* whack a mole */
+  .holes{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; width:min(420px,100%); padding:14px; border-radius:28px; background:linear-gradient(180deg,#8BD46E,#5DAE45); box-shadow:inset 0 -8px 0 rgba(0,0,0,.15)}
+  .hole{position:relative; border:0; padding:0; background:none; cursor:pointer; aspect-ratio:1}
+  .hole::after{content:""; position:absolute; left:8%; right:8%; bottom:10%; height:26%; border-radius:50%; background:radial-gradient(ellipse at center,#2E1A0C 50%,#6B4322 100%); box-shadow:0 4px 0 rgba(0,0,0,.15)}
+  .pit{position:absolute; left:8%; right:8%; bottom:23%; top:0; overflow:hidden; z-index:1; pointer-events:none}
+  .critter{position:absolute; left:50%; bottom:-4px; font-size:clamp(2.4rem,9vw,3.4rem); line-height:1; transform:translate(-50%,115%); transition:transform .14s ease-out}
+  .hole.up .critter{transform:translate(-50%,0)}
+  .holes.shake{animation:shake .35s}
+
+  /* schulte */
+  .chips{display:flex; gap:8px; flex-wrap:wrap; justify-content:center}
+  .chip{border:2px solid var(--peach); background:var(--cream); color:var(--ink); border-radius:999px; padding:6px 16px; font-weight:800; cursor:pointer}
+  .chip.on{background:var(--o2); border-color:var(--o2); color:#fff}
+  .schulte{--n:4; display:grid; grid-template-columns:repeat(var(--n),1fr); gap:8px; width:min(420px,100%); aspect-ratio:1}
+  .sc{border:0; border-radius:14px; background:var(--cream); border:3px solid var(--peach); color:var(--ink); font-weight:900; font-size:calc(min(420px,86vw) / var(--n) * .38); cursor:pointer; transition:background .15s,transform .15s; font-family:var(--body)}
+  .sc:hover{transform:scale(1.05)}
+  .sc.done{background:#DDF6EA; border-color:var(--good); color:var(--good); transform:scale(.92)}
+  .sc.sel{background:var(--sun); border-color:var(--o2); color:var(--ink); transform:scale(1.05)}
+  .schulte.locked .sc{filter:blur(4px); pointer-events:none}
+
+  @media (max-width:900px){ .game-pick{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:420px){ .pick-sub{display:none} .pick-ico{width:64px;height:64px;font-size:2rem} }
+
+  /* ---------- quiz ---------- */
+  .quiz{width:min(720px,100%); background:var(--paper); color:var(--ink); border-radius:var(--radius); padding:clamp(18px,4vw,30px); box-shadow:0 9px 0 var(--shadow); display:flex; flex-direction:column; gap:16px}
+  .quiz-top{display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; font-weight:800; color:var(--ink-soft)}
+  .progress{height:14px; background:var(--peach); border-radius:999px; overflow:hidden}
+  .progress i{display:block; height:100%; background:linear-gradient(90deg,var(--sun),var(--o2)); border-radius:999px; transition:width .5s}
+  .quiz-q{margin:0; font-family:var(--head); font-size:clamp(1.3rem,3.6vw,1.75rem); line-height:1.6}
+  .quiz-opts{display:grid; gap:10px}
+  .quiz-opt{text-align:right; border:3px solid var(--peach); background:var(--cream); color:var(--ink); border-radius:18px; padding:14px 18px; font-size:1.1rem; font-weight:800; cursor:pointer; transition:transform .2s,border-color .2s,background .2s; display:flex; align-items:center; gap:12px}
+  .quiz-opt .letter{flex:none; width:34px; height:34px; border-radius:50%; background:#fff; border:2px solid var(--o2); display:grid; place-items:center; color:var(--o4)}
+  .quiz-opt:hover:not(:disabled){border-color:var(--o2); transform:translateX(-4px)}
+  .quiz-opt:disabled{cursor:default}
+  .quiz-opt.correct{background:#DDF6EA; border-color:var(--good); color:#0B5A3E}
+  .quiz-opt.correct .letter{background:var(--good); color:#fff; border-color:var(--good)}
+  .quiz-opt.wrong{background:#FDE3E3; border-color:var(--bad); color:#7F1D1D}
+  .quiz-opt.wrong .letter{background:var(--bad); color:#fff; border-color:var(--bad)}
+  .quiz-foot{display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; min-height:46px}
+  .feedback{font-weight:900; font-size:1.05rem}
+  .result{text-align:center; display:flex; flex-direction:column; align-items:center; gap:10px}
+  .stars{font-size:3rem; letter-spacing:6px}
+  .stars .off{filter:grayscale(1); opacity:.3}
+  .result h2{margin:0; font-family:var(--head); font-size:2rem; color:var(--o4)}
+  .result p{margin:0; font-weight:800; font-size:1.15rem}
+
+  /* ---------- toast + confetti ---------- */
+  .toast{position:fixed; z-index:80; top:18px; left:50%; transform:translate(-50%,-140%); background:var(--paper); color:var(--ink); padding:12px 22px; border-radius:999px; font-weight:900; font-size:1.05rem; box-shadow:0 6px 0 rgba(154,52,18,.5),0 14px 30px rgba(0,0,0,.2); transition:transform .4s cubic-bezier(.34,1.56,.64,1); max-width:calc(100% - 32px); text-align:center; border:3px solid var(--good)}
+  .toast.warn{border-color:var(--bad)}
+  .toast.show{transform:translate(-50%,0)}
+  #confetti{position:fixed; inset:0; z-index:70; pointer-events:none}
+
+  footer{position:relative; z-index:1; text-align:center; font-weight:700; font-size:.9rem; opacity:.9; margin-top:46px}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:980px){ .games{grid-template-columns:repeat(2,1fr)} .games .game:last-child{grid-column:1/-1; max-width:480px; width:100%; justify-self:center} }
+  @media (max-width:820px){ .tiles{grid-template-columns:repeat(2,1fr)} .cards3{grid-template-columns:1fr} }
+  @media (max-width:640px){
+    .acts,.games,.cards2{grid-template-columns:1fr}
+    .games .game:last-child{max-width:none}
+    .tile{padding:18px 10px 16px}
+    .tile-icon{width:60px;height:60px}
+    .tile-sub{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){ *,*::before,*::after{animation:none !important; transition:none !important} html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+
+<div class="bg-shapes" aria-hidden="true">
+  <span></span><span></span><span></span><span></span><span></span>
+  <i style="top:12%;right:30%">✦</i><i style="top:62%;left:8%;animation-delay:-1s">✦</i><i style="top:80%;right:12%;animation-delay:-2s">★</i><i style="top:30%;left:40%;animation-delay:-3s">✦</i>
+</div>
+
+<header class="topbar">
+  <div class="ministry-block">
+    <img src="ministry.png" alt="شعار وزارة التربية" class="ministry-logo" onerror="this.style.visibility='hidden'">
+    <p class="ministry-text">
+      <span>وزارة التربية</span>
+      <span>منطقة الفروانية التعليمية</span>
+      <span>مراقبة الخدمات الاجتماعية و النفسية</span>
+    </p>
+  </div>
+  <img src="logo.png" alt="شعار المدرسة" class="school-logo" onerror="this.style.visibility='hidden'">
+</header>
+
+<main>
+<!-- ======================= HOME ======================= -->
+<section id="home" class="view">
+  <div class="hero">
+    <h1 class="say"><span class="hl">أكتوبر</span> شهر التوعية باضطراب فرط الحركة ونقص الانتباه</h1>
+  </div>
+
+  <nav class="tiles" aria-label="أقسام الموقع">
+    <a class="tile" href="#definition">
+      <span class="tile-go" aria-hidden="true">←</span>
+      <span class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5C2 4.7 2.7 4 3.5 4H9a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H3.5C2.7 17.5 2 16.8 2 16z"/><path d="M22 5.5c0-.8-.7-1.5-1.5-1.5H15a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5h6c.8 0 1.5-.7 1.5-1.5z"/></svg></span>
+      <span class="tile-title say">تعريف الاضطراب</span>
+      <span class="tile-sub">الأنواع والأعراض والعلاج</span>
+    </a>
+    <a class="tile" href="#activities">
+      <span class="tile-go" aria-hidden="true">←</span>
+      <span class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.6L12 17.2l-5.9 3.2 1.3-6.6-4.9-4.5 6.6-.8z"/></svg></span>
+      <span class="tile-title say">الأنشطة</span>
+      <span class="tile-sub">أنشطة تساعد على التركيز</span>
+    </a>
+    <a class="tile" href="#games">
+      <span class="tile-go" aria-hidden="true">←</span>
+      <span class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="11" rx="5.5"/><path d="M7.5 10.5v4M5.5 12.5h4"/><circle cx="15.5" cy="11.5" r=".8" fill="currentColor"/><circle cx="18" cy="14" r=".8" fill="currentColor"/></svg></span>
+      <span class="tile-title say">تطبيقات تفاعلية</span>
+      <span class="tile-sub">أربع ألعاب لتقوية الانتباه</span>
+    </a>
+  </nav>
+
+  <p class="motto say">كلنا مختلفون… وكلنا مميزون 🧡</p>
+</section>
+
+<!-- ======================= DEFINITION ======================= -->
+<section id="definition" class="view" hidden>
+  <div class="page-title">
+    <span class="emoji" aria-hidden="true">📘</span>
+    <h1 class="say">تعريف الاضطراب</h1>
+    <p class="say">اضغط على أي عنوان لتفتحه، أو اضغط على زر «اسمع» ليقرأه لك صديقك.</p>
+  </div>
+
+  <div class="acc">
+    <div class="acc-item" data-read-scope>
+      <button class="acc-btn" aria-expanded="false"><span class="acc-ico" aria-hidden="true">💡</span><span class="acc-label say">ما هو الاضطراب؟</span><span class="acc-arrow" aria-hidden="true">▼</span></button>
+      <div class="acc-panel"><div class="acc-clip"><div class="acc-body">
+        <p class="intro">اضطراب فرط الحركة ونقص الانتباه هو اضطراب في نموّ الدماغ يبدأ في الطفولة، ويؤثر على قدرة الطفل على الانتباه والتحكم في حركته وتصرفاته.</p>
+        <div class="cards3">
+          <div class="mini">
+            <h4>🧠 في الدماغ</h4>
+            <ul><li>يعمل دماغ الطفل بطريقة مختلفة في التركيز والتنظيم.</li><li>ليس كسلًا ولا قلة ذكاء.</li><li>ليس بسبب سوء التربية.</li></ul>
+          </div>
+          <div class="mini">
+            <h4>👦 متى يظهر؟</h4>
+            <ul><li>تبدأ أعراضه في الطفولة، غالبًا قبل عمر 12 سنة.</li><li>تظهر في أكثر من مكان، مثل البيت والمدرسة.</li><li>قد يستمر مع بعض الأشخاص حتى الكِبَر.</li></ul>
+          </div>
+          <div class="mini star">
+            <h4>📊 هل هو منتشر؟ <span class="tag">معلومة</span></h4>
+            <ul><li>من أكثر الاضطرابات انتشارًا بين الأطفال.</li><li>يصيب تقريبًا طفلًا واحدًا من كل عشرين طفلًا.</li></ul>
+          </div>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div class="acc-item" data-read-scope>
+      <button class="acc-btn" aria-expanded="false"><span class="acc-ico" aria-hidden="true">🧩</span><span class="acc-label say">أنواع الاضطراب</span><span class="acc-arrow" aria-hidden="true">▼</span></button>
+      <div class="acc-panel"><div class="acc-clip"><div class="acc-body">
+        <p class="intro">قد تزيد بعض الأعراض عن غيرها، ولكن هذا لا يعني بالضرورة انعدام الأعراض الأخرى. وقد تتغيّر نسبة ظهور الأعراض في المراحل العمرية المختلفة؛ كأن يظهر فرط الحركة والاندفاعية قبل عمر المدرسة، وبمجرد دخول المدرسة يبدأ تشتت الانتباه بالظهور بشكل أوضح.</p>
+        <div class="cards3">
+          <div class="mini">
+            <h4>⚡ فرط الحركة والاندفاعية</h4>
+            <ul><li>تغلب لديهم أعراض فرط الحركة والاندفاعية أكثر.</li><li>نسبته لدى الذكور أعلى من الإناث.</li></ul>
+          </div>
+          <div class="mini">
+            <h4>🎯 نقص الانتباه</h4>
+            <ul><li>تغلب لديهم أعراض نقص الانتباه أكثر.</li><li>نسبته لدى الإناث أعلى من الذكور.</li></ul>
+          </div>
+          <div class="mini star">
+            <h4>🔗 النوع المشترك <span class="tag">الأكثر انتشارًا</span></h4>
+            <ul><li>يشمل نقص الانتباه مع فرط الحركة والاندفاعية.</li><li>يُعدّ النوع الأكثر انتشارًا.</li><li>تظهر لديهم كافة الأعراض بنفس الدرجة تقريبًا.</li></ul>
+          </div>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div class="acc-item" data-read-scope>
+      <button class="acc-btn" aria-expanded="false"><span class="acc-ico" aria-hidden="true">🔎</span><span class="acc-label say">أعراض فرط الحركة ونقص الانتباه</span><span class="acc-arrow" aria-hidden="true">▼</span></button>
+      <div class="acc-panel"><div class="acc-clip"><div class="acc-body">
+        <div class="cards3">
+          <div class="mini">
+            <h4>🏃 أعراض فرط الحركة</h4>
+            <ul>
+              <li>الصعوبة في البقاء جالسًا لمدة طويلة.</li>
+              <li>الركض والتسلق كثيرًا وفي أي مكان.</li>
+              <li>الثرثرة والتحدث كثيرًا.</li>
+              <li>العبث باليدين والقدمين، كالتأرجح أثناء الجلوس على الكرسي.</li>
+              <li>صعوبة المشاركة في الأنشطة بهدوء.</li>
+              <li>الملل بسرعة.</li>
+            </ul>
+          </div>
+          <div class="mini">
+            <h4>🧠 أعراض نقص الانتباه</h4>
+            <ul>
+              <li>عدم الاهتمام بالتفاصيل والوقوع في أخطاء كثيرة بسبب الإهمال.</li>
+              <li>صعوبة كبيرة في الحفاظ على التركيز والانتباه.</li>
+              <li>سهولة التشتت بأي مؤثرات خارجية.</li>
+              <li>صعوبة في اتباع التعليمات والتوجيهات.</li>
+              <li>صعوبة في الترتيب والتنظيم أو الحفاظ عليهما.</li>
+              <li>تجنّب المهام التي تتطلب جهدًا عقليًا وتركيزًا.</li>
+              <li>نسيان الأنشطة والمهام اليومية.</li>
+              <li>التنقل من نشاط إلى آخر دون إنجاز أيٍّ منهما.</li>
+            </ul>
+          </div>
+          <div class="mini">
+            <h4>💥 أعراض الاندفاعية</h4>
+            <ul>
+              <li>مقاطعة الآخرين أثناء الكلام أو اللعب.</li>
+              <li>صعوبة انتظار الدور.</li>
+              <li>الإجابة قبل انتهاء السؤال.</li>
+              <li>التصرف بسرعة دون التفكير في النتائج.</li>
+            </ul>
+          </div>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div class="acc-item" data-read-scope>
+      <button class="acc-btn" aria-expanded="false"><span class="acc-ico" aria-hidden="true">🩺</span><span class="acc-label say">كيف يتم التشخيص؟</span><span class="acc-arrow" aria-hidden="true">▼</span></button>
+      <div class="acc-panel"><div class="acc-clip"><div class="acc-body">
+        <p class="intro">لا يوجد تحليل دم أو أشعة لاكتشاف الاضطراب، بل يتم التشخيص بالملاحظة والتقييم:</p>
+        <div class="cards3">
+          <div class="mini"><h4>👨‍⚕️ المختص</h4><p>يقوم بالتشخيص طبيب أو أخصائي نفسي متخصص في الأطفال.</p></div>
+          <div class="mini"><h4>📝 جمع المعلومات</h4><p>يسأل الأهل والمعلمين، ويستخدم استبيانات وملاحظات عن سلوك الطفل في البيت والمدرسة.</p></div>
+          <div class="mini"><h4>⏳ مدة الأعراض</h4><p>يجب أن تستمر الأعراض ستة أشهر على الأقل، وأن تؤثر على حياة الطفل ودراسته.</p></div>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div class="acc-item" data-read-scope>
+      <button class="acc-btn" aria-expanded="false"><span class="acc-ico" aria-hidden="true">💚</span><span class="acc-label say">العلاج</span><span class="acc-arrow" aria-hidden="true">▼</span></button>
+      <div class="acc-panel"><div class="acc-clip"><div class="acc-body">
+        <p class="intro">يعتمد علاج الاضطراب على ثلاث ركائز أساسية يكمل بعضها بعضًا:</p>
+        <div class="cards3">
+          <div class="mini">
+            <h4>💊 العلاج الدوائي</h4>
+            <p>يساعد على زيادة التركيز والانتباه لمدة أطول، وتقليل الحركة والاندفاعية.</p>
+          </div>
+          <div class="mini">
+            <h4>🤝 العلاج السلوكي والتربوي</h4>
+            <p>يعتمد على تعديل سلوكيات الطفل بأساليب واستراتيجيات يستخدمها الأهل؛ لاستبدال السلوكيات السلبية بأخرى إيجابية، وتدريبه على مهارات جديدة.</p>
+          </div>
+          <div class="mini">
+            <h4>🛡️ الوقاية</h4>
+            <p>رغم صعوبة الوقاية منه، توجد طرق قد تقلل نسبة الإصابة، ولا توجد دراسات كافية تثبت فعاليتها:</p>
+            <p>حماية الطفل أثناء الحمل وفي سنواته الأولى من الملوثات البيئية كالرصاص والزئبق والمبيدات الحشرية، وتجنّب التدخين خاصة أثناء الحمل.</p>
+          </div>
+        </div>
+      </div></div></div>
+    </div>
+    <div class="acc-item" data-read-scope>
+      <button class="acc-btn" aria-expanded="false"><span class="acc-ico" aria-hidden="true">🏫</span><span class="acc-label say">نصائح للمعلمين والأهل</span><span class="acc-arrow" aria-hidden="true">▼</span></button>
+      <div class="acc-panel"><div class="acc-clip"><div class="acc-body">
+        <div class="cards2">
+          <div class="mini">
+            <h4>👩‍🏫 في المدرسة</h4>
+            <ul>
+              <li>إجلاس الطالب قريبًا من المعلم وبعيدًا عن النوافذ والمشتتات.</li>
+              <li>إعطاء تعليمات قصيرة وواضحة، واحدة في كل مرة.</li>
+              <li>تقسيم المهام الطويلة إلى خطوات صغيرة.</li>
+              <li>السماح بفترات حركة قصيرة أثناء الحصة.</li>
+              <li>استخدام الصور والألوان والجداول في الشرح.</li>
+            </ul>
+          </div>
+          <div class="mini">
+            <h4>🏠 في البيت</h4>
+            <ul>
+              <li>وضع روتين يومي ثابت للنوم والدراسة واللعب.</li>
+              <li>استخدام قائمة مهام أو مؤقت لتنظيم الوقت.</li>
+              <li>مدح السلوك الإيجابي ومكافأته فورًا.</li>
+              <li>تقليل وقت الشاشات والحرص على النوم الكافي.</li>
+              <li>ممارسة الرياضة والأنشطة الحركية بانتظام.</li>
+            </ul>
+          </div>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div class="acc-item" data-read-scope>
+      <button class="acc-btn" aria-expanded="false"><span class="acc-ico" aria-hidden="true">🌟</span><span class="acc-label say">بماذا يتميزون</span><span class="acc-arrow" aria-hidden="true">▼</span></button>
+      <div class="acc-panel"><div class="acc-clip"><div class="acc-body">
+        <p class="intro">الأطفال المصابون بالاضطراب لديهم نقاط قوة رائعة يمكن تنميتها:</p>
+        <div class="cards3">
+          <div class="mini"><h4>⚡ الطاقة والحماس</h4><p>نشاط كبير يمكن توجيهه إلى الرياضة والأنشطة.</p></div>
+          <div class="mini"><h4>🎨 الإبداع والخيال</h4><p>أفكار جديدة وطرق مختلفة في التفكير وحل المشكلات.</p></div>
+          <div class="mini"><h4>🔍 الفضول</h4><p>حب الاكتشاف، وتركيز قوي جدًا عند الاهتمام بشيء يحبونه.</p></div>
+        </div>
+      </div></div></div>
+    </div>
+
+  </div>
+  <a class="back" href="#">→ العودة للرئيسية</a>
+</section>
+
+<!-- ======================= ACTIVITIES ======================= -->
+<section id="activities" class="view" hidden>
+  <div class="page-title">
+    <span class="emoji" aria-hidden="true">⭐</span>
+    <h1 class="say">الأنشطة</h1>
+    <p class="say">أنشطة ممتعة تساعد على التركيز وتفريغ الطاقة.</p>
+  </div>
+  <div class="acts">
+    <article class="act" data-read-scope>
+      <div class="act-img" data-icon="🎨"><span class="act-num">1</span><img src="activity1.png" alt="صلصال ولعب حسي" loading="lazy" onerror="this.parentElement.classList.add('noimg');this.remove()"></div>
+      <p class="say">الصلصال نشاط حسي ممتع يساعد على تفريغ الطاقة الزائدة، وينمّي الخيال ويزيد التركيز.</p>
+    </article>
+    <article class="act" data-read-scope>
+      <div class="act-img" data-icon="🌈"><span class="act-num">2</span><img src="activity2.png" alt="فرز الألوان بالملقط" loading="lazy" onerror="this.parentElement.classList.add('noimg');this.remove()"></div>
+      <p class="say">فرز الكرات الملوّنة بالملقط ينمّي التآزر البصري الحركي، ويعزز الانتباه والتركيز.</p>
+    </article>
+    <article class="act" data-read-scope>
+      <div class="act-img" data-icon="🎯"><span class="act-num">3</span><img src="activity3.png" alt="رمي الطوق في الهواء الطلق" loading="lazy" onerror="this.parentElement.classList.add('noimg');this.remove()"></div>
+      <p class="say">رمي الطوق لعبة جماعية في الهواء الطلق تحسّن التركيز، وتساعد على تفريغ الطاقة.</p>
+    </article>
+    <article class="act" data-read-scope>
+      <div class="act-img" data-icon="🥄"><span class="act-num">4</span><img src="activity4.png" alt="سباق الملاعق الملونة" loading="lazy" onerror="this.parentElement.classList.add('noimg');this.remove()"></div>
+      <p class="say">سباق الملاعق الملوّنة نشاط حركي ممتع يقوّي التركيز والتحكم في الحركة.</p>
+    </article>
+  </div>
+  <a class="back" href="#">→ العودة للرئيسية</a>
+</section>
+
+<!-- ======================= GAMES ======================= -->
+<section id="games" class="view" hidden>
+  <div class="page-title">
+    <span class="emoji" aria-hidden="true">🎮</span>
+    <h1 class="say">تطبيقات تفاعلية</h1>
+    <p class="say">أربع ألعاب تدرّب عقلك على التركيز والانتباه. اختر لعبة!</p>
+  </div>
+
+  <div class="game-pick" id="gamePick">
+    <button class="pick" type="button" data-game="duplicate">
+      <span class="pick-ico" style="--c1:#5BA8FF;--c2:#1C5FC9">🔁</span>
+      <span class="pick-title say">طابق الأرقام المكررة</span>
+      <span class="pick-sub">اعثر على كل الأزواج المتشابهة</span>
+      <span class="pick-skill">🔍 الملاحظة</span>
+    </button>
+    <button class="pick" type="button" data-game="memory">
+      <span class="pick-ico" style="--c1:#3DD68C;--c2:#0F8A5F">🃏</span>
+      <span class="pick-title say">بطاقات الذاكرة</span>
+      <span class="pick-sub">اقلب البطاقات وطابق الصور</span>
+      <span class="pick-skill">👀 التركيز البصري</span>
+    </button>
+    <button class="pick" type="button" data-game="mole">
+      <span class="pick-ico" style="--c1:#FFB547;--c2:#E07800">🔨</span>
+      <span class="pick-title say">اضرب الخلد</span>
+      <span class="pick-sub">اضرب الخلد وتجنّب الأرنب</span>
+      <span class="pick-skill">✋ التحكم بالاندفاع</span>
+    </button>
+    <button class="pick" type="button" data-game="schulte">
+      <span class="pick-ico" style="--c1:#FF7F7F;--c2:#D13A3A">🔢</span>
+      <span class="pick-title say">رتّب الأرقام</span>
+      <span class="pick-sub">اضغط الأرقام بالترتيب بسرعة</span>
+      <span class="pick-skill">🎯 الانتباه</span>
+    </button>
+  </div>
+
+  <div class="stage" id="stage" hidden data-read-scope>
+    <div class="stage-head">
+      <button class="btn ghost" type="button" id="stageBack">→ كل الألعاب</button>
+    </div>
+    <h2 class="stage-title say" id="stageTitle"></h2>
+    <p class="stage-how say" id="stageHow"></p>
+    <div class="stats" id="stageStats"></div>
+    <div class="stage-body" id="stageBody" data-noread></div>
+    <p class="status" id="stageMsg" aria-live="polite" data-noread></p>
+    <button class="btn big" type="button" id="stageStart">ابدأ اللعب!</button>
+  </div>
+  <a class="back" href="#">→ العودة للرئيسية</a>
+</section>
+
+<!-- ======================= QUIZ ======================= -->
+<section id="quiz" class="view" hidden>
+  <div class="page-title">
+    <span class="emoji" aria-hidden="true">🏆</span>
+    <h1 class="say">اختبر معلوماتك</h1>
+    <p class="say">أجب عن الأسئلة واجمع النجوم!</p>
+  </div>
+  <div class="quiz" id="quizCard" data-read-scope>
+    <div class="quiz-top"><span id="quizNum">السؤال 1</span></div>
+    <div class="progress"><i id="quizBar" style="width:0"></i></div>
+    <p class="quiz-q say" id="quizQ"></p>
+    <div class="quiz-opts" id="quizOpts"></div>
+    <div class="quiz-foot"><span class="feedback" id="quizFeedback" aria-live="polite"></span><button class="btn" type="button" id="quizNext" hidden>السؤال التالي</button></div>
+  </div>
+  <div class="quiz result" id="quizResult" hidden>
+    <div class="stars" id="quizStars"></div>
+    <h2 id="quizTitle" class="say"></h2>
+    <p id="quizMsg" class="say"></p>
+    <button class="btn" type="button" id="quizAgain">العب مرة أخرى</button>
+  </div>
+  <a class="back" href="#">→ العودة للرئيسية</a>
+</section>
+</main>
+
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<script>
+/* ================= helpers ================= */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const rand = n => Math.floor(Math.random() * n);
+const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = rand(i + 1); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ================= toast ================= */
+let toastT;
+function toast(msg, kind = '') {
+  const t = $('#toast');
+  t.textContent = msg; t.className = 'toast ' + kind;
+  requestAnimationFrame(() => t.classList.add('show'));
+  clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 2300);
+}
+
+/* ================= sound effects ================= */
+const SFX = {
+  on: true, ctx: null,
+  tone(f, d = .12, type = 'sine', vol = .15, slide = 0) {
+    if (!this.on) return;
+    try {
+      this.ctx = this.ctx || new (window.AudioContext || window.webkitAudioContext)();
+      const c = this.ctx, o = c.createOscillator(), g = c.createGain(), t = c.currentTime;
+      o.type = type; o.frequency.setValueAtTime(f, t);
+      if (slide) o.frequency.exponentialRampToValueAtTime(f * slide, t + d);
+      g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(.001, t + d);
+      o.connect(g).connect(c.destination); o.start(t); o.stop(t + d);
+    } catch (e) {}
+  },
+  pop() { this.tone(520, .09, 'sine', .22, 2.2); },
+  good() { this.tone(660, .1); setTimeout(() => this.tone(990, .16), 90); },
+  bad() { this.tone(200, .22, 'square', .05, .7); },
+  win() { [523, 659, 784, 1047].forEach((f, i) => setTimeout(() => this.tone(f, .2, 'triangle', .14), i * 110)); }
+};
+
+/* ================= confetti ================= */
+function confetti(n = 140) {
+  if (reduceMotion) return;
+  const cv = $('#confetti'), ctx = cv.getContext('2d'), dpr = devicePixelRatio || 1;
+  cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; ctx.scale(dpr, dpr);
+  const colors = ['#FFFFFF', '#FFD166', '#F97316', '#2BB673', '#3E8EF7', '#EF476F'];
+  const P = Array.from({ length: n }, () => ({
+    x: innerWidth / 2 + (Math.random() - .5) * 240, y: innerHeight * .4,
+    vx: (Math.random() - .5) * 14, vy: -Math.random() * 13 - 4,
+    s: Math.random() * 8 + 5, r: Math.random() * 6, vr: (Math.random() - .5) * .35,
+    c: colors[rand(colors.length)]
+  }));
+  (function loop() {
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    let alive = 0;
+    P.forEach(p => {
+      p.vy += .35; p.vx *= .99; p.x += p.vx; p.y += p.vy; p.r += p.vr;
+      if (p.y < innerHeight + 20) alive++;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.r); ctx.fillStyle = p.c;
+      ctx.fillRect(-p.s / 2, -p.s / 4, p.s, p.s / 2); ctx.restore();
+    });
+    if (alive) requestAnimationFrame(loop); else ctx.clearRect(0, 0, innerWidth, innerHeight);
+  })();
+}
+
+/* ================= accordion ================= */
+function openAcc(item) {
+  $$('.acc-item').forEach(o => { if (o !== item) { o.classList.remove('open'); $('.acc-btn', o).setAttribute('aria-expanded', 'false'); } });
+  item.classList.add('open'); $('.acc-btn', item).setAttribute('aria-expanded', 'true');
+}
+$$('.acc-btn').forEach(b => b.addEventListener('click', () => {
+  const item = b.closest('.acc-item');
+  if (item.classList.contains('open')) { item.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); }
+  else openAcc(item);
+}));
+
+const PRAISE = ['أحسنت!', 'رائع!', 'ممتاز!', 'عمل جميل!', 'أنت بطل!'];
+const praise = () => PRAISE[rand(PRAISE.length)];
+
+/* ================= games hub ================= */
+const setStat = (k, v) => { const e = $('#st-' + k); if (e) e.textContent = v; };
+const msg = t => { $('#stageMsg').textContent = t; };
+const showStart = (txt = 'ابدأ اللعب!') => { const b = $('#stageStart'); b.textContent = txt; b.hidden = false; };
+
+/* ---- 1. Duplicate pairs: spot the numbers that repeat and match both of each pair ---- */
+const Duplicate = {
+  title: '🔁 طابق الأرقام المكررة',
+  how: 'في الشبكة أرقام، وبعضها يتكرر مرتين فقط. اضغط على رقمين تظن أنهما متشابهان في كل مرة، وابحث عن كل الأزواج المكرّرة!',
+  stats: [['tries', 'المحاولات'], ['pairs', 'الأزواج'], ['best', 'الأفضل']], n: 5, best: {},
+  cells: [], pairsCount: 0, pairsFound: 0, tries: 0, lock: true, selIdx: null, busy: false,
+  mount(body) {
+    body.innerHTML = `<div class="chips">${[[5, 'سهل'], [7, 'متوسط'], [10, 'صعب']].map(([n, l]) => `<button type="button" class="chip${n === this.n ? ' on' : ''}" data-n="${n}">${l} ${n}×${n}</button>`).join('')}</div><div class="schulte" id="dupGrid"></div>`;
+    $$('.chip', body).forEach(c => c.onclick = () => {
+      this.n = +c.dataset.n; $$('.chip', body).forEach(x => x.classList.toggle('on', x === c));
+      this.stop(); this.build(true); showStart();
+    });
+    this.build(true);
+  },
+  build(locked) {
+    const n = this.n, total = n * n;
+    this.pairsCount = n <= 5 ? 4 : n <= 7 ? 5 : 6;
+    const singlesCount = total - this.pairsCount * 2;
+    const pool = shuffle(Array.from({ length: this.pairsCount + singlesCount }, (_, i) => i + 1));
+    const pairVals = pool.slice(0, this.pairsCount);
+    const singleVals = pool.slice(this.pairsCount);
+    const cells = [];
+    pairVals.forEach(v => cells.push(v, v));
+    singleVals.forEach(v => cells.push(v));
+    shuffle(cells);
+    this.cells = cells;
+    const g = $('#dupGrid');
+    g.style.setProperty('--n', n);
+    g.innerHTML = cells.map((v, i) => `<button type="button" class="sc" data-v="${v}" data-i="${i}">${v}</button>`).join('');
+    $$('.sc', g).forEach(b => b.addEventListener('pointerdown', e => { e.preventDefault(); this.tap(b); }));
+    this.lock = locked; g.classList.toggle('locked', locked);
+    this.tries = 0; this.pairsFound = 0; this.selIdx = null; this.busy = false;
+    setStat('tries', 0); setStat('pairs', `0/${this.pairsCount}`); setStat('best', this.best[n] ?? '—');
+    msg(locked ? 'اختر المستوى ثم اضغط «ابدأ اللعب»' : 'اضغط على رقمين متشابهين 🔍');
+  },
+  start() {
+    this.stop(); this.build(false); $('#stageStart').hidden = true;
+  },
+  tap(b) {
+    if (this.lock || this.busy || b.classList.contains('done')) return;
+    const i = +b.dataset.i;
+    if (this.selIdx === i) return;
+    b.classList.add('sel');
+    if (this.selIdx === null) { this.selIdx = i; return; }
+    const g = $('#dupGrid'), first = $$('.sc', g).find(x => +x.dataset.i === this.selIdx);
+    const v1 = +first.dataset.v, v2 = +b.dataset.v;
+    this.tries++; setStat('tries', this.tries);
+    if (v1 === v2) {
+      first.classList.remove('sel'); first.classList.add('done');
+      b.classList.remove('sel'); b.classList.add('done');
+      this.pairsFound++; setStat('pairs', `${this.pairsFound}/${this.pairsCount}`);
+      SFX.good(); msg(praise());
+      this.selIdx = null;
+      if (this.pairsFound === this.pairsCount) this.win();
+    } else {
+      this.busy = true; SFX.bad();
+      msg('غير متطابقين… حاول مرة أخرى');
+      setTimeout(() => { first.classList.remove('sel'); b.classList.remove('sel'); this.selIdx = null; this.busy = false; }, 650);
+    }
+  },
+  win() {
+    this.lock = true;
+    const rec = this.best[this.n] == null || this.tries < this.best[this.n];
+    if (rec) { this.best[this.n] = this.tries; setStat('best', this.tries); }
+    confetti(); SFX.win();
+    msg(`🎉 أحسنت! وجدت كل الأزواج في ${this.tries} محاولة` + (rec ? ' — رقم قياسي!' : ''));
+    showStart('العب مرة أخرى');
+  },
+  stop() { this.lock = true; }
+};
+
+/* ---- 2. Memory cards ---- */
+const Memory = {
+  title: '🃏 بطاقات الذاكرة',
+  how: 'انظر إلى البطاقات جيدًا قبل أن تنقلب، ثم اقلب كل بطاقتين وابحث عن الصور المتشابهة بأقل عدد من المحاولات.',
+  stats: [['moves', 'المحاولات'], ['pairs', 'الأزواج'], ['time', 'الوقت'], ['best', 'الأفضل']], best: null,
+  icons: ['🦁', '🐸', '🐵', '🦄', '🐙', '🦋', '🐢', '🍉'],
+  open: [], moves: 0, pairs: 0, lock: true, tos: [], timer: null, t0: 0,
+  mount(body) {
+    body.innerHTML = '<div class="mcards" id="mcards"></div>';
+    this.deal(); setStat('best', this.best ?? '—');
+    msg('اضغط «ابدأ اللعب» لترى البطاقات');
+  },
+  deal() {
+    const deck = shuffle([...this.icons, ...this.icons]);
+    $('#mcards').innerHTML = deck.map(e => `<button type="button" class="mcard" data-e="${e}" aria-label="بطاقة"><span class="mc-inner"><span class="mc-face mc-back">✦</span><span class="mc-face mc-front">${e}</span></span></button>`).join('');
+    $$('.mcard').forEach(c => c.onclick = () => this.flip(c));
+    this.open = []; this.moves = 0; this.pairs = 0; this.lock = true;
+    setStat('moves', 0); setStat('pairs', '0/8'); setStat('time', 0);
+  },
+  start() {
+    this.stop(); this.deal(); $('#stageStart').hidden = true;
+    const cards = $$('.mcard');
+    this.tos.push(setTimeout(() => cards.forEach(c => c.classList.add('flip')), 100));
+    msg('احفظ أماكن الصور… 👀');
+    this.tos.push(setTimeout(() => {
+      cards.forEach(c => c.classList.remove('flip'));
+      this.lock = false; this.t0 = Date.now();
+      this.timer = setInterval(() => setStat('time', Math.floor((Date.now() - this.t0) / 1000)), 1000);
+      msg('ابدأ! اقلب بطاقتين 👆');
+    }, 2800));
+  },
+  flip(c) {
+    if (this.lock || c.classList.contains('flip')) return;
+    SFX.tone(620, .05, 'triangle', .08);
+    c.classList.add('flip'); this.open.push(c);
+    if (this.open.length < 2) return;
+    this.moves++; setStat('moves', this.moves);
+    const [a, b] = this.open; this.open = [];
+    if (a.dataset.e === b.dataset.e) {
+      a.classList.add('matched'); b.classList.add('matched'); SFX.good();
+      this.pairs++; setStat('pairs', this.pairs + '/8'); msg(praise());
+      if (this.pairs === 8) this.win();
+    } else {
+      this.lock = true;
+      this.tos.push(setTimeout(() => { a.classList.remove('flip'); b.classList.remove('flip'); this.lock = false; }, 800));
+    }
+  },
+  win() {
+    clearInterval(this.timer); this.lock = true;
+    const s = Math.round((Date.now() - this.t0) / 1000), rec = this.best === null || this.moves < this.best;
+    if (rec) { this.best = this.moves; setStat('best', this.moves); }
+    confetti(); SFX.win();
+    msg(`🎉 أحسنت! أنهيتها في ${this.moves} محاولة و${s} ثانية` + (rec ? ' — رقم قياسي!' : ''));
+    showStart('العب مرة أخرى');
+  },
+  stop() { this.tos.forEach(clearTimeout); this.tos = []; clearInterval(this.timer); this.lock = true; }
+};
+
+/* ---- 3. Whack-a-mole (go / no-go: impulse control) ---- */
+const Mole = {
+  title: '🔨 اضرب الخلد',
+  how: 'اضرب الخلد 🐹 بسرعة عندما يخرج من الحفرة، لكن انتبه! لا تضرب الأرنب 🐰 وإلا ستخسر نقطتين. فكّر قبل أن تضغط!',
+  stats: [['score', 'النقاط'], ['time', 'الوقت'], ['best', 'الأفضل']], best: 0,
+  score: 0, time: 30, running: false, tos: [], timer: null, n: 0,
+  mount(body) {
+    body.innerHTML = `<div class="holes" id="holes">${Array.from({ length: 9 }, () => '<button type="button" class="hole" aria-label="حفرة"><span class="pit"><span class="critter"></span></span></button>').join('')}</div>`;
+    $$('.hole', body).forEach(h => h.addEventListener('pointerdown', e => { e.preventDefault(); this.hit(h); }));
+    setStat('score', 0); setStat('time', 30); setStat('best', this.best);
+    msg('اضرب 🐹 فقط… ولا تضرب 🐰');
+  },
+  start() {
+    this.stop(); this.score = 0; this.time = 30; this.running = true;
+    setStat('score', 0); setStat('time', 30); $('#stageStart').hidden = true; msg('انطلق! 🐹');
+    this.timer = setInterval(() => { this.time--; setStat('time', this.time); if (this.time <= 0) this.end(); }, 1000);
+    this.loop();
+  },
+  loop() {
+    if (!this.running) return;
+    const free = $$('.hole').filter(h => !h.dataset.kind);
+    if (free.length) {
+      const h = free[rand(free.length)], bad = Math.random() < .28, id = ++this.n;
+      h.dataset.kind = bad ? 'bad' : 'good'; h.dataset.id = id;
+      $('.critter', h).textContent = bad ? '🐰' : '🐹';
+      h.classList.add('up');
+      const stay = Math.max(650, 1200 - (30 - this.time) * 18);
+      this.tos.push(setTimeout(() => { if (h.dataset.id == id) this.hide(h); }, stay));
+    }
+    this.tos.push(setTimeout(() => this.loop(), Math.max(380, 780 - (30 - this.time) * 13)));
+  },
+  hide(h) { h.classList.remove('up'); setTimeout(() => { delete h.dataset.kind; }, 150); },
+  hit(h) {
+    if (!this.running) return;
+    const k = h.dataset.kind;
+    if (k !== 'good' && k !== 'bad') return;
+    h.dataset.kind = 'done';
+    if (k === 'good') {
+      this.score++; SFX.pop(); $('.critter', h).textContent = '⭐';
+      if (this.score % 10 === 0) msg(praise() + ' 🔥');
+    } else {
+      this.score = Math.max(0, this.score - 2); SFX.bad(); $('.critter', h).textContent = '💨';
+      const hs = $('#holes'); hs.classList.remove('shake'); void hs.offsetWidth; hs.classList.add('shake');
+      msg('انتبه! هذا أرنب 🐰 (−2)');
+    }
+    setStat('score', this.score);
+    const id = h.dataset.id;
+    setTimeout(() => { if (h.dataset.id == id) this.hide(h); }, 260);
+  },
+  end() {
+    this.stop();
+    const rec = this.score > this.best;
+    if (rec) { this.best = this.score; setStat('best', this.score); }
+    msg(`انتهى الوقت! نقاطك: ${this.score}` + (rec && this.score > 0 ? ' — رقم قياسي! 🏆' : ''));
+    if (rec && this.score > 0) { confetti(); SFX.win(); }
+    showStart('العب مرة أخرى');
+  },
+  stop() {
+    this.running = false; clearInterval(this.timer); this.tos.forEach(clearTimeout); this.tos = [];
+    $$('.hole').forEach(h => { h.classList.remove('up'); delete h.dataset.kind; });
+  }
+};
+
+/* ---- 4. Schulte table: find numbers in order ---- */
+const Schulte = {
+  title: '🔢 رتّب الأرقام',
+  how: 'اضغط على الأرقام بالترتيب من الأصغر إلى الأكبر بأسرع ما يمكن. عيناك تبحثان وعقلك يركّز!',
+  stats: [['next', 'ابحث عن'], ['time', 'الوقت'], ['best', 'الأفضل']], n: 4, best: {},
+  target: 1, lock: true, timer: null, t0: 0,
+  mount(body) {
+    body.innerHTML = `<div class="chips">${[[3, 'سهل'], [4, 'متوسط'], [5, 'صعب']].map(([n, l]) => `<button type="button" class="chip${n === this.n ? ' on' : ''}" data-n="${n}">${l} ${n}×${n}</button>`).join('')}</div><div class="schulte" id="schulte"></div>`;
+    $$('.chip', body).forEach(c => c.onclick = () => {
+      this.n = +c.dataset.n; $$('.chip', body).forEach(x => x.classList.toggle('on', x === c));
+      this.stop(); this.build(true); showStart();
+    });
+    this.build(true);
+  },
+  build(locked) {
+    const n = this.n, g = $('#schulte');
+    g.style.setProperty('--n', n);
+    g.innerHTML = shuffle([...Array(n * n)].map((_, i) => i + 1)).map(x => `<button type="button" class="sc" data-v="${x}">${x}</button>`).join('');
+    $$('.sc', g).forEach(b => b.addEventListener('pointerdown', e => { e.preventDefault(); this.tap(b); }));
+    this.target = 1; this.lock = locked; g.classList.toggle('locked', locked);
+    setStat('next', 1); setStat('time', '0.0'); setStat('best', this.best[n] ? this.best[n].toFixed(1) : '—');
+    msg(locked ? 'اختر المستوى ثم اضغط «ابدأ اللعب»' : 'ابحث عن الرقم 1 👀');
+  },
+  start() {
+    this.stop(); this.build(false); $('#stageStart').hidden = true;
+    this.t0 = performance.now();
+    this.timer = setInterval(() => setStat('time', ((performance.now() - this.t0) / 1000).toFixed(1)), 100);
+  },
+  tap(b) {
+    if (this.lock || b.classList.contains('done')) return;
+    if (+b.dataset.v === this.target) {
+      b.classList.add('done'); SFX.tone(440 + this.target * 18, .06, 'triangle', .1);
+      this.target++;
+      if (this.target > this.n * this.n) return this.win();
+      setStat('next', this.target); msg('');
+    } else {
+      SFX.bad(); b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake');
+      msg(`ليس هذا… ابحث عن ${this.target}`);
+    }
+  },
+  win() {
+    clearInterval(this.timer); this.lock = true;
+    const t = (performance.now() - this.t0) / 1000, rec = !this.best[this.n] || t < this.best[this.n];
+    if (rec) { this.best[this.n] = t; setStat('best', t.toFixed(1)); }
+    setStat('time', t.toFixed(1)); setStat('next', '✓');
+    confetti(); SFX.win();
+    msg(`🎉 رائع! أنهيتها في ${t.toFixed(1)} ثانية` + (rec ? ' — رقم قياسي!' : ''));
+    showStart('العب مرة أخرى');
+  },
+  stop() { clearInterval(this.timer); this.lock = true; }
+};
+
+const GAMES = { duplicate: Duplicate, memory: Memory, mole: Mole, schulte: Schulte };
+const Stage = {
+  cur: null,
+  open(key) {
+    const g = GAMES[key]; if (!g) return;
+    this.close(); this.cur = g;
+    $('#gamePick').hidden = true; $('#stage').hidden = false;
+    $('#stageTitle').textContent = g.title; $('#stageHow').textContent = g.how;
+    $('#stageStats').innerHTML = g.stats.map(([k, l]) => `<span class="stat">${l} <b id="st-${k}">0</b></span>`).join('');
+    msg(''); showStart();
+    g.mount($('#stageBody'));
+    $('#stage').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+  },
+  close() { if (this.cur) this.cur.stop(); this.cur = null; },
+  back() { this.close(); $('#stage').hidden = true; $('#gamePick').hidden = false; }
+};
+$$('.pick').forEach(p => p.onclick = () => Stage.open(p.dataset.game));
+$('#stageBack').onclick = () => { Stage.back(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+$('#stageStart').onclick = () => { if (Stage.cur) { Stage.cur.start(); } };
+
+/* ================= quiz ================= */
+const QUIZ = [ // first option is always the correct one (shuffled when shown)
+  { q: 'في أي شهر تكون التوعية باضطراب فرط الحركة ونقص الانتباه؟', o: ['أكتوبر', 'مارس', 'يناير'] },
+  { q: 'ما النوع الأكثر انتشارًا من الاضطراب؟', o: ['النوع المشترك', 'نقص الانتباه فقط', 'فرط الحركة فقط'] },
+  { q: 'أيٌّ من هذه من أعراض فرط الحركة؟', o: ['صعوبة البقاء جالسًا لمدة طويلة', 'حب القراءة', 'النوم مبكرًا'] },
+  { q: 'أيٌّ من هذه من أعراض نقص الانتباه؟', o: ['سهولة التشتت بأي مؤثرات خارجية', 'الركض بسرعة', 'الطول'] },
+  { q: 'على كم ركيزة يعتمد علاج الاضطراب؟', o: ['ثلاث ركائز', 'ركيزة واحدة', 'خمس ركائز'] },
+  { q: 'نوع فرط الحركة والاندفاعية نسبته أعلى لدى…', o: ['الذكور', 'الإناث'] },
+  { q: 'هل أكل الحلويات يسبب الاضطراب؟', o: ['لا، السكر ليس سببًا للاضطراب', 'نعم دائمًا'] },
+  { q: 'كيف أساعد صديقي المصاب بالاضطراب؟', o: ['أكون صبورًا وأشركه في اللعب', 'أسخر منه', 'أتركه وحيدًا'] },
+  { q: 'أيٌّ من هذه من أعراض الاندفاعية؟', o: ['صعوبة انتظار الدور', 'النوم مبكرًا', 'حب الرسم'] },
+  { q: 'أي نشاط ينمّي الذاكرة البصرية؟', o: ['البحث عن المتشابهات', 'مشاهدة التلفاز طويلًا', 'النوم'] }
+];
+const LETTERS = ['أ', 'ب', 'ج'];
+const Quiz = {
+  i: 0, score: 0, order: [], started: false,
+  start() {
+    this.i = 0; this.score = 0; this.started = true;
+    this.order = shuffle([...QUIZ.keys()]);
+    $('#quizResult').hidden = true; $('#quizCard').hidden = false; this.show();
+  },
+  show() {
+    const q = QUIZ[this.order[this.i]];
+    $('#quizNum').textContent = `السؤال ${this.i + 1} من ${QUIZ.length}`;
+    $('#quizBar').style.width = (this.i / QUIZ.length * 100) + '%';
+    $('#quizQ').textContent = q.q;
+    const box = $('#quizOpts'); box.innerHTML = '';
+    shuffle(q.o.map((t, k) => ({ t, ok: k === 0 }))).forEach((o, k) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'quiz-opt'; b.dataset.ok = o.ok ? 1 : '';
+      b.innerHTML = `<span class="letter" aria-hidden="true">${LETTERS[k]}</span><span>${o.t}</span>`;
+      b.onclick = () => this.answer(b);
+      box.appendChild(b);
+    });
+    $('#quizNext').hidden = true; $('#quizFeedback').textContent = '';
+  },
+  answer(b) {
+    $$('.quiz-opt').forEach(x => x.disabled = true);
+    if (b.dataset.ok) {
+      b.classList.add('correct'); this.score++; SFX.good();
+      const p = praise(); $('#quizFeedback').textContent = '🌟 ' + p + ' إجابة صحيحة'; $('#quizFeedback').style.color = 'var(--good)';
+    } else {
+      b.classList.add('wrong'); $('.quiz-opt[data-ok="1"]').classList.add('correct'); SFX.bad();
+      $('#quizFeedback').textContent = 'الإجابة الصحيحة باللون الأخضر 💡'; $('#quizFeedback').style.color = 'var(--bad)';
+    }
+    $('#quizBar').style.width = ((this.i + 1) / QUIZ.length * 100) + '%';
+    const nx = $('#quizNext');
+    nx.textContent = this.i === QUIZ.length - 1 ? 'عرض النتيجة 🏆' : 'السؤال التالي';
+    nx.hidden = false; nx.focus();
+  },
+  next() { this.i++; if (this.i >= QUIZ.length) this.finish(); else this.show(); },
+  finish() {
+    const n = QUIZ.length, s = this.score;
+    const stars = s >= n - 1 ? 3 : s >= Math.ceil(n / 2) ? 2 : 1;
+    $('#quizCard').hidden = true; $('#quizResult').hidden = false;
+    $('#quizStars').innerHTML = [0, 1, 2].map(k => `<span class="${k < stars ? '' : 'off'}">⭐</span>`).join('');
+    $('#quizTitle').textContent = stars === 3 ? 'ممتاز! أنت بطل التوعية' : stars === 2 ? 'أحسنت! عمل جميل' : 'محاولة جيدة!';
+    $('#quizMsg').textContent = `أجبت إجابة صحيحة عن ${s} من ${n} أسئلة.` + (stars < 3 ? ' اقرأ قسم التعريف ثم حاول مرة أخرى.' : '');
+    if (stars >= 2) { confetti(); SFX.win(); }
+  }
+};
+$('#quizNext').onclick = () => Quiz.next();
+$('#quizAgain').onclick = () => Quiz.start();
+
+/* ================= router ================= */
+const ROUTES = {
+  '': ['home', 'أكتوبر - شهر التوعية'],
+  definition: ['definition', 'تعريف الاضطراب - أكتوبر'],
+  activities: ['activities', 'الأنشطة - أكتوبر'],
+  games: ['games', 'تطبيقات تفاعلية - أكتوبر'],
+  quiz: ['quiz', 'اختبر معلوماتك - أكتوبر'],
+  square1: ['definition', 'تعريف الاضطراب - أكتوبر'],
+  square2: ['activities', 'الأنشطة - أكتوبر'],
+  square3: ['games', 'تطبيقات تفاعلية - أكتوبر']
+};
+function render() {
+  const [id, title] = ROUTES[location.hash.slice(1)] || ROUTES[''];
+  Stage.close();
+  $$('.view').forEach(v => v.hidden = v.id !== id);
+  document.title = title;
+  window.scrollTo(0, 0);
+  if (id === 'games') Stage.back();
+  if (id === 'quiz' && !Quiz.started) Quiz.start();
+}
+window.addEventListener('hashchange', render);
+
+
+render();
+</script>
+</body>
+</html>
